@@ -1,0 +1,12 @@
+# Raw asset backup folder (không cần cho website chạy)
+SẢN PHẨM*
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Logs & temp
+*.log
+

@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ngô Đoàn Thu Ngọc</title>
+  <meta name="description"
+    content="Ngô Đoàn Thu Ngọc — Portfolio Overview, Năng lực cốt lõi, Hoạt động chính Content Creative, Hoạt động phụ (Livestream, Sự kiện, Training), Skills (AI, Brief hình) & Contacts.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23f29bb8'/><text x='50%' y='68%' font-family='sans-serif' font-size='56' font-weight='900' fill='%23f5f2eb' text-anchor='middle'>N</text></svg>">
+
+  <!-- Google Fonts (Hỗ trợ đầy đủ tiếng Việt & tiếng Anh cho font viết tay và font tiêu đề) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Damion&family=Itim&family=Mali:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Remix Icon CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Vendor Stylesheet: Cropper.js -->
+  <link rel="stylesheet" href="assets/vendor/cropper.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=svn-poppins2">
+</head>
+
+<body class="h-mode">
+
+  <!-- ==================== TOP EDITORIAL NAVBAR ==================== -->
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <!-- Clicking Brand Logo returns to Cover (Overview) -->
+      <a href="#cover" class="brand-logo active" id="brand-home-btn" data-slide-to="0" title="Quay về Trang bìa (Overview)">
+        <span class="brand-dot"></span>
+        <span class="brand-name" data-i18n="nav.brand">Thu Ngọc</span>
+      </a>
+
+      <!-- 5 Main Content Tabs (No Cover Tab) -->
+      <nav class="slide-nav" id="slide-nav" aria-label="Slide Navigation">
+        <!-- 2. Năng lực cốt lõi -->
+        <div class="nav-item-wrap">
+          <a href="#story" class="nav-pill" data-slide-to="1" data-slide-group="1" data-i18n="nav.core">Năng lực cốt lõi</a>
+        </div>
+
+        <!-- 3. Hoạt động chính – Content Creative (Projects 1, 2, 3, 4... + Overview) -->
+        <div class="nav-item-wrap has-sub">
+          <a href="#projects" class="nav-pill" data-slide-to="2" data-slide-group="2,3,4" data-i18n="nav.mainAct">Hoạt động chính – Content Creative</a>
+          <div class="nav-dropdown" id="main-act-dropdown">
+            <button type="button" class="nav-sub-item is-project-item active" data-slide-to="2" data-project-open="p1" data-i18n="nav.proj1">• Project 1: Fujiwa Speed</button>
+            <button type="button" class="nav-sub-item is-project-item" data-slide-to="2" data-project-open="p2" data-i18n="nav.proj2">• Project 2: Fujiwa Ion Kiềm</button>
+            <button type="button" class="nav-sub-item is-project-item" data-slide-to="2" data-project-open="p3" data-i18n="nav.proj3">• Project 3: Fujiwa Hydrogen</button>
+            <button type="button" class="nav-sub-item is-project-item" data-slide-to="2" data-project-open="p4" data-i18n="nav.proj4">• Project 4: Fujiwa Canxi</button>
+            <button type="button" class="nav-sub-item is-project-item" data-slide-to="2" data-project-open="p5" data-i18n="nav.proj5">• Project 5: Fujiwa Nước Muối</button>
+            <div id="nav-dynamic-projects"></div>
+            <div class="nav-dropdown-divider"></div>
+            <button type="button" class="nav-sub-item" data-slide-to="3" data-i18n="nav.mainSub1">• Kênh &amp; Định hướng Content</button>
+            <button type="button" class="nav-sub-item" data-slide-to="4" data-i18n="nav.mainSub2">• Hiệu quả &amp; Số liệu Visuals</button>
+            <button type="button" class="nav-sub-item nav-add-proj-btn" id="nav-add-project-btn">
+              <i class="ri-add-circle-line"></i> <span>Thêm Project mới</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. Hoạt động phụ (Livestream, Sự kiện, Training) -->
+        <div class="nav-item-wrap has-sub">
+          <a href="#mood" class="nav-pill" data-slide-to="5" data-slide-group="5" data-i18n="nav.subAct">Hoạt động phụ</a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-sub-item" data-slide-to="5" data-highlight-part="livestream" data-i18n="nav.subItem1">• Livestream</button>
+            <button type="button" class="nav-sub-item" data-slide-to="5" data-highlight-part="event" data-i18n="nav.subItem2">• Sự kiện</button>
+            <button type="button" class="nav-sub-item" data-slide-to="5" data-highlight-part="training" data-i18n="nav.subItem3">• Training</button>
+          </div>
+        </div>
+
+        <!-- 5. Skills (Brief hình, AI, Video) -->
+        <div class="nav-item-wrap has-sub">
+          <a href="#works" class="nav-pill" data-slide-to="6" data-slide-group="6" data-i18n="nav.skills">Skills</a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-sub-item" data-slide-to="6" data-highlight-part="brief" data-i18n="nav.skillItem1">• Brief hình &amp; Art Direction</button>
+            <button type="button" class="nav-sub-item" data-slide-to="6" data-highlight-part="ai" data-i18n="nav.skillItem2">• AI Creative Workflow</button>
+            <button type="button" class="nav-sub-item" data-slide-to="6" data-highlight-part="content" data-i18n="nav.skillItem3">• Kịch bản &amp; Video</button>
+          </div>
+        </div>
+
+        <!-- 6. Contacts -->
+        <div class="nav-item-wrap">
+          <a href="#contact" class="nav-pill" data-slide-to="7" data-slide-group="7" data-i18n="nav.contact">Contacts</a>
+        </div>
+      </nav>
+
+      <div class="topbar-actions">
+        <!-- Layout Switcher: Lookbook Slide vs Poster Board -->
+        <button type="button" class="layout-toggle-btn" id="layout-toggle-btn" title="Chuyển chế độ xem từng trang / xem toàn bộ Poster">
+          <i class="ri-layout-grid-line"></i>
+          <span id="layout-toggle-label">Poster View</span>
+        </button>
+
+        <!-- Language Switcher (VI / EN) -->
+        <div class="lang-switch" id="lang-switch" role="radiogroup" aria-label="Language switch">
+          <button type="button" class="lang-btn active" data-lang="vi">VI</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <!-- Quick Edit Mode Trigger -->
+        <button type="button" class="top-edit-btn" id="top-edit-btn" title="Mở công cụ chỉnh sửa trực tiếp">
+          <i class="ri-edit-circle-line"></i>
+          <span data-i18n="nav.editBtn">Bật Chế Độ Sửa</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HORIZONTAL LOOKBOOK VIEWPORT ==================== -->
+  <main class="lookbook-viewport" id="h-viewport">
+    <div class="lookbook-track" id="h-track">
+
+      <!-- ==================== 1. OVERVIEW / TRANG BÌA (CLICK LOGO TO VIEW) ==================== -->
+      <section class="slide-panel slide-cover is-active" id="cover" data-slide-index="0">
+        <div class="slide-canvas cover-canvas">
+          <!-- Handwritten Top Greeting -->
+          <p class="hand-note cover-hand-left" data-i18n="cover.handTopLeft">Hi. Since you're new here.</p>
+          <p class="hand-note cover-hand-right" data-i18n="cover.handTopRight">let me be ya tour guide</p>
+          <p class="hand-note cover-hand-center" data-i18n="cover.handCenter">This is</p>
+
+          <!-- Layer 1: Giant Brush First Name (Behind Portrait) -->
+          <h1 class="cover-brush-title">
+            <span class="brush-word brush-stacey" data-i18n="cover.firstName">THU</span>
+          </h1>
+
+          <!-- Layer 2: Center Cutout Portrait -->
+          <div class="cover-portrait-wrap" data-crop-ratio="0.78">
+            <img src="assets/Page Cover/IMG_3078-removebg-preview.png?v=hires" alt="Cover Portrait" class="cover-portrait-img"
+              data-img-key="cover.portrait">
+          </div>
+
+          <!-- Layer 3: Giant Brush Last Name (Overlapping Portrait Shirt) -->
+          <div class="cover-brush-lastname-wrap">
+            <span class="brush-word brush-wang" data-i18n="cover.lastName">NGOC</span>
+          </div>
+
+          <!-- Bottom Editorial Metadata -->
+          <div class="cover-footer-meta">
+            <span class="cover-meta-left" data-i18n="cover.roleLeft">Creative/Content Marketing</span>
+            <span class="cover-meta-right" data-i18n="cover.authorRight">By Thu Ngoc</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 2. NĂNG LỰC CỐT LÕI (SLIDE 02: EDITORIAL LOOKBOOK) ==================== -->
+      <section class="slide-panel slide-story" id="story" data-slide-index="1">
+        <div class="slide-canvas story-canvas">
+          <!-- Main 2-Column Editorial Stage -->
+          <div class="story-editorial-grid">
+            <!-- Left Column: Editorial Portrait & Creative Manifesto -->
+            <div class="story-left-col">
+              <div class="story-tag-row">
+                <span class="story-tag-sticker" data-i18n="story.badge">02 / CORE COMPETENCIES</span>
+                <span class="story-tag-hand" data-i18n="story.handNote">creative mindset &amp; approach ✦</span>
+              </div>
+
+              <!-- Editorial Lookbook Portrait Card -->
+              <div class="story-portrait-card">
+                <div class="portrait-photo-wrap" data-crop-ratio="0.82">
+                  <div class="portrait-photo-bg"></div>
+                  <img src="assets/Page Cover/IMG_3078-removebg-preview.png?v=hires" alt="Thu Ngọc - Creative &amp; Content Marketing" data-img-key="story.portrait" class="portrait-photo-img">
+                  <span class="portrait-stamp-badge">CREATIVE • BRANDING</span>
+                </div>
+                <div class="portrait-quote-box">
+                  <p class="portrait-manifesto" data-i18n="story.manifesto">
+                    &ldquo;Sáng tạo không chỉ để ngắm nhìn &mdash; Sáng tạo là để chạm đúng cảm xúc và tạo ra hành động.&rdquo;
+                  </p>
+                  <span class="portrait-author-sign" data-i18n="story.authorSign">&mdash; Ngô Đoàn Thu Ngọc</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: 3 Editorial Pillars -->
+            <div class="story-right-col">
+              <!-- Header Section -->
+              <div class="story-section-header">
+                <span class="story-eyebrow" data-i18n="story.eyebrow">TRIẾT LÝ &amp; NĂNG LỰC CỐT LÕI</span>
+                <h2 class="story-main-title" data-i18n="story.mainTitle">
+                  Định vị bản sắc thương hiệu bằng tư duy thị giác thực chiến
+                </h2>
+              </div>
+
+              <!-- 3 Pillar Cards -->
+              <div class="story-pillars-list">
+                <!-- Pillar 1: CREATIVE -->
+                <div class="pillar-card pillar-creative">
+                  <div class="pillar-num-badge badge-pink">
+                    <span class="p-num">01</span>
+                    <i class="ri-lightbulb-line p-icon"></i>
+                  </div>
+                  <div class="pillar-body">
+                    <div class="pillar-label-strip">
+                      <span class="pillar-category tag-pink" data-i18n="story.c1Tag">CREATIVE DIRECTION</span>
+                    </div>
+                    <h3 class="pillar-title" data-i18n="story.c1Title">Sáng tạo từ Thấu cảm Insight (Insight-Driven)</h3>
+                    <p class="pillar-desc" data-i18n="story.c1Desc">
+                      Không làm visual bay bổng thiếu thực tế. Mọi ý tưởng moodboard, shotlist hay góc quay đều bắt nguồn từ việc thấu hiểu sâu sắc nỗi đau (pain-point) để giữ chân người xem ngay trong 3 giây đầu.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Pillar 2: BRANDING -->
+                <div class="pillar-card pillar-branding">
+                  <div class="pillar-num-badge badge-crimson">
+                    <span class="p-num">02</span>
+                    <i class="ri-palette-line p-icon"></i>
+                  </div>
+                  <div class="pillar-body">
+                    <div class="pillar-label-strip">
+                      <span class="pillar-category tag-crimson" data-i18n="story.c2Tag">BRAND IDENTITY</span>
+                    </div>
+                    <h3 class="pillar-title" data-i18n="story.c2Title">Nhất Quán Nhận Diện &amp; Bản Sắc Khác Biệt</h3>
+                    <p class="pillar-desc" data-i18n="story.c2Desc">
+                      Đồng bộ 100% ngôn ngữ thị giác ở mọi điểm chạm: từ thiết kế bao bì, nhãn chai, banner POSM đến từng khung hình video social (9:16). Giúp thương hiệu luôn nổi bật và được nhận diện tức thì.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Pillar 3: CONTENT MARKETING -->
+                <div class="pillar-card pillar-content">
+                  <div class="pillar-num-badge badge-charcoal">
+                    <span class="p-num">03</span>
+                    <i class="ri-sparkling-fill p-icon"></i>
+                  </div>
+                  <div class="pillar-body">
+                    <div class="pillar-label-strip">
+                      <span class="pillar-category tag-charcoal" data-i18n="story.c3Tag">CONTENT &amp; VIDEO</span>
+                    </div>
+                    <h3 class="pillar-title" data-i18n="story.c3Title">Nội Dung Định Hướng Chuyển Đổi Thực Tế</h3>
+                    <p class="pillar-desc" data-i18n="story.c3Desc">
+                      Content hay không chỉ dừng ở lượt xem. Kết hợp nhịp dựng gãy gọn, âm thanh bắt trend và lời kêu gọi hành động (CTA) khéo léo để dẫn dắt hành vi: tạo niềm tin, kích thích tương tác và thúc đẩy doanh thu.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Action Link -->
+              <div class="story-bottom-action">
+                <a href="#projects" class="story-action-link" data-slide-to="2">
+                  <span data-i18n="story.ctaBtn">Xem các chiến dịch thực chiến đã triển khai</span>
+                  <i class="ri-arrow-right-line"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 3. HOẠT ĐỘNG CHÍNH – PROJECTS CASE STUDIES (FAIS LAYOUT) ==================== -->
+      <section class="slide-panel slide-projects" id="projects" data-slide-index="2">
+        <div class="slide-canvas projects-canvas">
+          <!-- Top Project Selector & Accordion Header Bar -->
+          <div class="projects-topbar">
+            <div class="projects-topbar-left">
+              <span class="projects-eyebrow" data-i18n="projects.sectionLabel">HOẠT ĐỘNG CHÍNH – CONTENT CREATIVE CASE STUDIES</span>
+            </div>
+            <div class="projects-tabs-bar" id="projects-tabs-bar" role="tablist">
+              <!-- Populated by app.js: Project 1, Project 2, Project 3, Project 4, ... + Add Project -->
+            </div>
+          </div>
+
+          <!-- Scrollable Fais Case Study Showcase Container -->
+          <div class="projects-showcase-stage" id="projects-showcase-stage">
+            <!-- Each Project (p1, p2, p3, p4...) is rendered here with full Fais 14-image Bento Grid + Case Study structure -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 3B. HOẠT ĐỘNG CHÍNH – KÊNH & ĐỊNH HƯỚNG CONTENT ==================== -->
+      <section class="slide-panel slide-social" id="social" data-slide-index="3">
+        <div class="slide-canvas social-canvas">
+          <!-- Left Visual Column: Portrait over Pink Brush Lettering -->
+          <div class="social-left-stage">
+            <div class="social-bg-graffiti" aria-hidden="true">
+              <span class="graffiti-line-1" data-i18n="social.bgWord1">LOVE</span>
+              <span class="graffiti-line-2" data-i18n="social.bgWord2">Style</span>
+            </div>
+            <div class="social-main-portrait" data-crop-ratio="0.58">
+              <img src="assets/images/social-portrait.jpg" alt="Content Creator Portrait" data-img-key="social.leftPortrait">
+            </div>
+          </div>
+
+          <!-- Right Content Column: Hand-drawn Oval Badge + Bio/Services + Bed Selfie -->
+          <div class="social-right-stage">
+            <div class="social-oval-badge">
+              <svg class="oval-ring-svg" viewBox="0 0 280 86" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <ellipse cx="140" cy="43" rx="132" ry="35" stroke="#2c2926" stroke-width="1.2" transform="rotate(-2 140 43)" />
+                <ellipse cx="140" cy="43" rx="128" ry="32" stroke="#2c2926" stroke-width="0.9" transform="rotate(1.5 140 43)" />
+              </svg>
+              <strong class="social-handle" data-i18n="social.handle">@stac3ysee</strong>
+              <span class="social-followers" data-i18n="social.followers">3000+ followers on rednote</span>
+            </div>
+
+            <div class="social-info-columns">
+              <div class="social-bio-col">
+                <p data-i18n="social.bioText">I love content creating and enjoy sharing snippets of my lifestyle that reflect intentional living, self-growth, and an eye for aesthetic.</p>
+              </div>
+              <div class="social-do-col">
+                <p class="social-do-heading" data-i18n="social.doTitle">Content Creative:</p>
+                <ul class="social-do-list">
+                  <li data-i18n="social.doItem1">Video scripting</li>
+                  <li data-i18n="social.doItem2">Video editing</li>
+                  <li data-i18n="social.doItem3">Social media post</li>
+                  <li data-i18n="social.doItem4">Branding</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="social-bottom-photo-wrap" data-crop-ratio="1.77">
+              <img src="assets/images/social-bed-hoodie.jpg" alt="Lifestyle snippet" data-img-key="social.bottomImg">
+              <span class="social-photo-overlay-text" data-i18n="social.bottomCaption">such as...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 3C. HOẠT ĐỘNG CHÍNH – CONTENT CREATIVE METRICS ==================== -->
+      <section class="slide-panel slide-impact" id="impact" data-slide-index="4">
+        <div class="slide-canvas impact-canvas">
+          <header class="impact-header">
+            <p class="impact-subhead" data-i18n="impact.subHeading">it's not just editing,</p>
+            <h2 class="impact-mainhead" data-i18n="impact.mainHeading">it's vibing with visuals.</h2>
+          </header>
+
+          <div class="impact-body-grid">
+            <div class="impact-analytics-col">
+              <span class="impact-metric-label" data-i18n="impact.metricLabel">Total post views / impressions</span>
+              <div class="impact-outlined-num" data-i18n="impact.metricNumber">70,368</div>
+
+              <div class="impact-chart-box">
+                <div class="chart-y-axis" aria-hidden="true">
+                  <span>60</span>
+                  <span>50</span>
+                  <span>40</span>
+                  <span>30</span>
+                  <span>20</span>
+                  <span>10</span>
+                  <span>0</span>
+                </div>
+                <div class="chart-bars-area" id="impact-bars-area">
+                  <div class="chart-bar-col">
+                    <span class="bar-pct"><span data-i18n="impact.bar1Val">6</span>%</span>
+                    <div class="bar-fill" data-bar-idx="1" style="--pct: 6%;"></div>
+                    <span class="bar-age" data-i18n="impact.bar1Lbl">13-17</span>
+                  </div>
+                  <div class="chart-bar-col is-peak">
+                    <span class="bar-pct"><span data-i18n="impact.bar2Val">61</span>%</span>
+                    <div class="bar-fill" data-bar-idx="2" style="--pct: 61%;"></div>
+                    <span class="bar-age" data-i18n="impact.bar2Lbl">18-24</span>
+                  </div>
+                  <div class="chart-bar-col">
+                    <span class="bar-pct"><span data-i18n="impact.bar3Val">22</span>%</span>
+                    <div class="bar-fill" data-bar-idx="3" style="--pct: 22%;"></div>
+                    <span class="bar-age" data-i18n="impact.bar3Lbl">25-34</span>
+                  </div>
+                  <div class="chart-bar-col">
+                    <span class="bar-pct"><span data-i18n="impact.bar4Val">8</span>%</span>
+                    <div class="bar-fill" data-bar-idx="4" style="--pct: 8%;"></div>
+                    <span class="bar-age" data-i18n="impact.bar4Lbl">35-44</span>
+                  </div>
+                  <div class="chart-bar-col">
+                    <span class="bar-pct"><span data-i18n="impact.bar5Val">3</span>%</span>
+                    <div class="bar-fill" data-bar-idx="5" style="--pct: 3%;"></div>
+                    <span class="bar-age" data-i18n="impact.bar5Lbl">45+</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="impact-chart-footnote" data-i18n="impact.chartNote">
+                My content primarily resonates with Gen Z, with 61% of my audience aged 18–24.
+              </p>
+            </div>
+
+            <div class="impact-editorial-col">
+              <p class="impact-questions-text" data-i18n="impact.philosophyText">
+                How to set the tempo so clips fall into rhythm like choreography? How to write a caption that sparkles? How to capture moments that look aesthetic but feel like a story? How to find the perfect track that makes your edit hit harder?
+              </p>
+
+              <div class="impact-clips-stack">
+                <div class="impact-clip-frame" data-crop-ratio="1.77">
+                  <img src="assets/images/visual-street-clip.jpg" alt="Street rhythm clip" data-img-key="impact.clipTop">
+                </div>
+                <div class="impact-clip-frame impact-clip-narrow" data-crop-ratio="2.8">
+                  <img src="assets/images/visual-dark-clip.jpg" alt="Atmospheric frame" data-img-key="impact.clipBottom">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="editorial-sticker sticker-minimal" data-i18n="impact.sticker">Minimal</div>
+        </div>
+      </section>
+
+      <!-- ==================== 4. HOẠT ĐỘNG PHỤ: LIVESTREAM • SỰ KIỆN • TRAINING ==================== -->
+      <section class="slide-panel slide-mood" id="mood" data-slide-index="5">
+        <div class="slide-canvas mood-canvas">
+          <!-- Left Column: Livestream & Backstage Frames -->
+          <div class="mood-left-col" data-activity-box="livestream">
+            <div class="mood-img-box mood-city-bw" data-crop-ratio="1.36">
+              <img src="assets/images/mood-city-bw.jpg" alt="Livestream setup" data-img-key="mood.leftTopImg">
+              <span class="mood-tag-chip" data-i18n="mood.tagLivestream">Livestream</span>
+            </div>
+            <div class="mood-img-box mood-street-walk" data-crop-ratio="0.67">
+              <img src="assets/images/mood-street-walk.jpg" alt="On-site activity" data-img-key="mood.leftBottomImg">
+            </div>
+          </div>
+
+          <!-- Right Column: Sự kiện + Editorial Note + Training -->
+          <div class="mood-right-col">
+            <div class="mood-top-trio" data-activity-box="event">
+              <div class="mood-img-box mood-trio-item" data-crop-ratio="0.67">
+                <img src="assets/images/mood-urban-day.jpg" alt="Event moment 1" data-img-key="mood.rightTop1">
+                <span class="mood-tag-chip" data-i18n="mood.tagEvent">Sự kiện</span>
+              </div>
+              <div class="mood-img-box mood-trio-item" data-crop-ratio="0.67">
+                <img src="assets/images/mood-night-friends.jpg" alt="Event moment 2" data-img-key="mood.rightTop2">
+              </div>
+              <div class="mood-img-box mood-trio-item" data-crop-ratio="0.67">
+                <img src="assets/images/mood-studio-white.jpg" alt="Studio production" data-img-key="mood.rightTop3">
+              </div>
+            </div>
+
+            <div class="mood-caption-block">
+              <p class="mood-pink-line" data-i18n="mood.captionLine1">Seven years later, she's basically a pro at grabbing attention.</p>
+              <p class="mood-pink-line" data-i18n="mood.captionLine2">Livestream • Sự kiện • Training nội bộ &amp; điều phối hiện trường.</p>
+              <p class="mood-dark-line" data-i18n="mood.captionLine3">Cứ nơi nào cần năng lượng &amp; hình ảnh chỉn chu, phía sau đều có Thu Ngọc.</p>
+            </div>
+
+            <div class="mood-bottom-duo" data-activity-box="training">
+              <div class="mood-img-box mood-duo-item" data-crop-ratio="1.25">
+                <img src="assets/images/mood-hotpot.jpg" alt="Training session" data-img-key="mood.rightBottom1">
+                <span class="mood-tag-chip" data-i18n="mood.tagTraining">Training</span>
+              </div>
+              <div class="mood-img-box mood-duo-item" data-crop-ratio="1.45">
+                <img src="assets/images/mood-cheers.jpg" alt="Team bonding & sharing" data-img-key="mood.rightBottom2">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 5. SKILLS: BENTO STUDIO & TOOL STACK ==================== -->
+      <section class="slide-panel slide-works" id="works" data-slide-index="6">
+        <div class="slide-canvas works-canvas">
+          <!-- Slide Header -->
+          <header class="works-header">
+            <div class="works-header-info">
+              <span class="works-badge" data-i18n="works.badge">CORE CAPABILITIES &amp; CREATIVE TOOLKIT</span>
+              <h2 class="works-title">
+                <span class="works-title-main" data-i18n="works.titleMain">Kỹ Năng &amp; Tư Duy Sáng Tạo</span>
+                <span class="works-title-sub" data-i18n="works.titleSub">Visual Direction • AI Creative Workflow • Short-Form Video Strategy</span>
+              </h2>
+            </div>
+            <div class="works-header-note">
+              <span class="works-hand-note" data-i18n="works.handNote">Từ ý tưởng bay bổng đến sản phẩm thực chiến ✦</span>
+            </div>
+          </header>
+
+          <!-- 3-Pillar Bento Studio Layout -->
+          <div class="works-bento-grid">
+            <!-- 01. Art Direction & Visual Briefing -->
+            <div class="works-bento-card bento-card-art" data-skill-box="brief">
+              <div class="bento-card-header">
+                <span class="bento-badge-num" data-i18n="works.c1Num">01</span>
+                <div class="bento-header-titles">
+                  <h3 class="bento-title" data-i18n="works.c1Title">Art Direction &amp; Brief Hình</h3>
+                  <span class="bento-sub" data-i18n="works.c1Sub">Visual Concept &amp; Moodboard Guideline</span>
+                </div>
+              </div>
+
+              <div class="bento-card-content">
+                <!-- Color Palette -->
+                <div class="bento-palette-strip">
+                  <span class="bento-mini-label" data-i18n="works.c1ColorLabel">Brand Palette:</span>
+                  <div class="bento-dots-wrap">
+                    <span class="bento-dot" style="background:#f09cb8;" title="#F09CB8 (Pastel Pink)"></span>
+                    <span class="bento-dot" style="background:#760e15;" title="#760E15 (Deep Crimson)"></span>
+                    <span class="bento-dot" style="background:#1e1c1a;" title="#1E1C1A (Charcoal)"></span>
+                    <span class="bento-dot" style="background:#3d6350;" title="#3D6350 (Fresh Emerald)"></span>
+                    <span class="bento-dot" style="background:#ede4d3;" title="#EDE4D3 (Organic Cream)"></span>
+                  </div>
+                </div>
+
+                <!-- Typography Specimens -->
+                <div class="bento-type-strip">
+                  <span class="bento-type-sample type-serif" data-i18n="works.c1Type1">Editorial Serif</span>
+                  <span class="bento-type-divider">•</span>
+                  <span class="bento-type-sample type-sans" data-i18n="works.c1Type2">Modern Sans</span>
+                  <span class="bento-type-divider">•</span>
+                  <span class="bento-type-sample type-script" data-i18n="works.c1Type3">Handwritten</span>
+                </div>
+
+                <!-- Checkpoints -->
+                <ul class="bento-points-list">
+                  <li>
+                    <i class="ri-check-line point-icon"></i>
+                    <span data-i18n="works.c1Check1"><strong>Moodboard &amp; Tone-and-Mood:</strong> Xây dựng bảng màu, ánh sáng studio và cảm xúc thương hiệu đồng nhất trước ngày bấm máy.</span>
+                  </li>
+                  <li>
+                    <i class="ri-check-line point-icon"></i>
+                    <span data-i18n="works.c1Check2"><strong>Shotlist &amp; Prop Styling:</strong> Lên danh sách chi tiết các góc chụp sản phẩm (flatlay, macro bọt khoáng, lifestyle), chuẩn bị đạo cụ ăn khớp.</span>
+                  </li>
+                  <li>
+                    <i class="ri-check-line point-icon"></i>
+                    <span data-i18n="works.c1Check3"><strong>Direct hiện trường:</strong> Làm việc trực tiếp với photographer và talent để bắt trọn góc hình tự nhiên, đúng định vị.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bento-card-footer">
+                <div class="bento-mini-polaroids">
+                  <div class="polaroid-item pol-left">
+                    <img src="assets/products/speed/img-01.png" alt="Visual Concept Speed" data-img-key="works.briefImg1">
+                  </div>
+                  <div class="polaroid-item pol-right">
+                    <img src="assets/products/ion-kiem/img-01.png" alt="Visual Concept Ion Kiềm" data-img-key="works.briefImg2">
+                  </div>
+                </div>
+                <span class="bento-footer-tag" data-i18n="works.c1Tag">✦ 100% Brand Consistency</span>
+              </div>
+            </div>
+
+            <!-- 02. AI Creative Workflow -->
+            <div class="works-bento-card bento-card-ai" data-skill-box="ai">
+              <div class="bento-card-header">
+                <span class="bento-badge-num num-ai" data-i18n="works.c2Num">02</span>
+                <div class="bento-header-titles">
+                  <h3 class="bento-title" data-i18n="works.c2Title">AI Creative Workflow</h3>
+                  <span class="bento-sub" data-i18n="works.c2Sub">Tối ưu 300% hiệu suất sản xuất ý tưởng</span>
+                </div>
+              </div>
+
+              <div class="bento-card-content">
+                <!-- AI Prompt Box -->
+                <div class="bento-prompt-terminal">
+                  <div class="prompt-terminal-top">
+                    <span class="prompt-terminal-tag"><i class="ri-sparkling-fill"></i> <span data-i18n="works.c2PromptBadge">Midjourney v6.0 Prompt Blueprint</span></span>
+                    <span class="prompt-terminal-dot"></span>
+                  </div>
+                  <div class="prompt-terminal-body">
+                    <code class="prompt-code-text" data-i18n="works.c2Prompt">/imagine prompt: editorial commercial still-life product photography of ionized mineral water glass bottle, floating crystal droplets, pastel pink reflection, soft natural sunlight, studio lighting, hyper-realistic, 8k --ar 4:5 --v 6.0</code>
+                  </div>
+                </div>
+
+                <!-- Checkpoints -->
+                <ul class="bento-points-list">
+                  <li>
+                    <i class="ri-sparkling-line point-icon"></i>
+                    <span data-i18n="works.c2Check1"><strong>Rapid Concept Prototyping:</strong> Dùng Midjourney &amp; DALL-E phác thảo 10+ layout visual moodboard trong 15 phút để chốt ý tưởng cùng team.</span>
+                  </li>
+                  <li>
+                    <i class="ri-sparkling-line point-icon"></i>
+                    <span data-i18n="works.c2Check2"><strong>Multi-angle Content Hooks:</strong> Tận dụng ChatGPT &amp; Claude khai thác 20+ góc tiếp cận hook TikTok theo từng tệp insight khách hàng.</span>
+                  </li>
+                  <li>
+                    <i class="ri-sparkling-line point-icon"></i>
+                    <span data-i18n="works.c2Check3"><strong>Generative Retouching:</strong> Ứng dụng Photoshop AI mở rộng khung hình (Generative Expand) và làm sạch chi tiết ấn phẩm siêu tốc.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bento-card-footer">
+                <span class="bento-footer-tag tag-ai" data-i18n="works.c2Tag">✦ AI-Augmented Creative Specialist</span>
+              </div>
+            </div>
+
+            <!-- 03. Content Strategy & Video Scripting -->
+            <div class="works-bento-card bento-card-video" data-skill-box="content">
+              <div class="bento-card-header">
+                <span class="bento-badge-num num-video" data-i18n="works.c3Num">03</span>
+                <div class="bento-header-titles">
+                  <h3 class="bento-title" data-i18n="works.c3Title">Kịch Bản &amp; Dựng Video</h3>
+                  <span class="bento-sub" data-i18n="works.c3Sub">Short-Form Strategy (TikTok / Reels / Shorts)</span>
+                </div>
+              </div>
+
+              <div class="bento-card-content">
+                <!-- Hook Formula Stepper -->
+                <div class="bento-hook-stepper">
+                  <div class="hook-step-item">
+                    <span class="hook-badge" data-i18n="works.f1Badge">0 - 3s</span>
+                    <div class="hook-detail">
+                      <strong class="hook-title" data-i18n="works.f1Title">Stop-Scroll Hook:</strong>
+                      <span class="hook-desc" data-i18n="works.f1Desc">Visual bất ngờ hoặc câu hỏi đánh thẳng vào pain-point người xem.</span>
+                    </div>
+                  </div>
+                  <div class="hook-step-item">
+                    <span class="hook-badge" data-i18n="works.f2Badge">4 - 20s</span>
+                    <div class="hook-detail">
+                      <strong class="hook-title" data-i18n="works.f2Title">Value &amp; Rhythm:</strong>
+                      <span class="hook-desc" data-i18n="works.f2Desc">Nhịp dựng nhanh (fast-paced), âm thanh bắt trend, trải nghiệm chân thực.</span>
+                    </div>
+                  </div>
+                  <div class="hook-step-item">
+                    <span class="hook-badge badge-cta" data-i18n="works.f3Badge">End</span>
+                    <div class="hook-detail">
+                      <strong class="hook-title" data-i18n="works.f3Title">Engaging CTA:</strong>
+                      <span class="hook-desc" data-i18n="works.f3Desc">Kêu gọi hành động khéo léo, kích thích comment chia sẻ quan điểm.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Checkpoints -->
+                <ul class="bento-points-list">
+                  <li>
+                    <i class="ri-video-on-line point-icon"></i>
+                    <span data-i18n="works.c3Check1"><strong>Tư duy dựng phim nhạy bén:</strong> Cắt ghép theo nhịp điệu (beat-sync), canh chỉnh thời lượng vàng và chèn sub động sinh động.</span>
+                  </li>
+                  <li>
+                    <i class="ri-video-on-line point-icon"></i>
+                    <span data-i18n="works.c3Check2"><strong>Tối ưu thuật toán:</strong> Nắm vững retention rate, định dạng chuẩn dọc 9:16 giữ chân người xem xuyên suốt.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="bento-card-footer">
+                <span class="bento-footer-tag tag-video" data-i18n="works.c3Tag">✦ 10.000+ Likes organic từ 5 video đầu tay</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Strip: Professional Tool Stack -->
+          <div class="works-tools-strip">
+            <div class="tools-strip-heading">
+              <span class="tools-sub-lbl" data-i18n="works.toolsSub">CORE STACK</span>
+              <strong class="tools-main-lbl" data-i18n="works.toolsTitle">Công Cụ Thực Chiến</strong>
+            </div>
+            <div class="tools-chips-row">
+              <div class="tool-pill" title="Adobe Photoshop">
+                <span class="tool-icon-box icon-ps">Ps</span>
+                <span class="tool-name" data-i18n="works.toolPs">Photoshop</span>
+              </div>
+              <div class="tool-pill" title="Adobe Illustrator">
+                <span class="tool-icon-box icon-ai">Ai</span>
+                <span class="tool-name" data-i18n="works.toolAi">Illustrator</span>
+              </div>
+              <div class="tool-pill" title="Adobe Premiere Pro">
+                <span class="tool-icon-box icon-pr">Pr</span>
+                <span class="tool-name" data-i18n="works.toolPr">Premiere Pro</span>
+              </div>
+              <div class="tool-pill" title="CapCut Pro">
+                <span class="tool-icon-box icon-cc"><i class="ri-scissors-2-fill"></i></span>
+                <span class="tool-name" data-i18n="works.toolCc">CapCut Pro</span>
+              </div>
+              <div class="tool-pill" title="Figma">
+                <span class="tool-icon-box icon-fg"><i class="ri-layout-masonry-fill"></i></span>
+                <span class="tool-name" data-i18n="works.toolFg">Figma</span>
+              </div>
+              <div class="tool-pill" title="Midjourney">
+                <span class="tool-icon-box icon-mj"><i class="ri-magic-line"></i></span>
+                <span class="tool-name" data-i18n="works.toolMj">Midjourney</span>
+              </div>
+              <div class="tool-pill" title="ChatGPT &amp; Claude">
+                <span class="tool-icon-box icon-gpt"><i class="ri-sparkling-fill"></i></span>
+                <span class="tool-name" data-i18n="works.toolGpt">ChatGPT &amp; Claude</span>
+              </div>
+              <div class="tool-pill" title="Meta Ads Manager">
+                <span class="tool-icon-box icon-meta"><i class="ri-advertisement-fill"></i></span>
+                <span class="tool-name" data-i18n="works.toolFb">Meta Ads</span>
+              </div>
+              <div class="tool-pill" title="TikTok Studio &amp; Shop">
+                <span class="tool-icon-box icon-tt"><i class="ri-tiktok-fill"></i></span>
+                <span class="tool-name" data-i18n="works.toolTt">TikTok Shop</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 6. CONTACTS ==================== -->
+      <section class="slide-panel slide-contact" id="contact" data-slide-index="7">
+        <div class="slide-canvas contact-canvas">
+          <div class="contact-links-list">
+            <div class="contact-row">
+              <span class="contact-icon-box"><i class="ri-mail-line"></i></span>
+              <a href="mailto:Thungoc281104@gmail.com" class="contact-link-val" data-i18n="contact.email">Thungoc281104@gmail.com</a>
+            </div>
+            <div class="contact-row">
+              <span class="contact-icon-box"><i class="ri-phone-line"></i></span>
+              <a href="tel:0936118299" class="contact-link-val" data-i18n="contact.phone">0936118299</a>
+            </div>
+            <div class="contact-row">
+              <span class="contact-icon-box"><i class="ri-linkedin-box-line"></i></span>
+              <a href="https://www.linkedin.com/in/ngodoanthungoc/" target="_blank" rel="noopener" class="contact-link-val" data-i18n="contact.linkedin">Ngoc Ngo Doan Thu</a>
+            </div>
+          </div>
+
+          <div class="contact-headline-top">
+            <span class="wrap-word-line" data-i18n="contact.closingTop1">and</span>
+            <span class="wrap-word-line" data-i18n="contact.closingTop2">that's</span>
+          </div>
+
+          <div class="envelope-stage">
+            <div class="pink-envelope" id="pink-envelope">
+              <div class="envelope-flap"></div>
+              <div class="envelope-back"></div>
+
+              <div class="lined-letter-card">
+                <p class="letter-hand-text" data-i18n="contact.letterPara1">
+                  Thank you so much for taking the time to look through my portfolio! I always appreciate new opportunities to learn and grow.
+                </p>
+                <p class="letter-hand-text" data-i18n="contact.letterPara2">
+                  If you're interested in working together, I'd love to chat!
+                </p>
+              </div>
+
+              <div class="envelope-pocket"></div>
+
+              <!-- 3D Crimson Wax Seal with Stylized "N" Monogram (Click to open/close letter) -->
+              <button type="button" class="envelope-stamp-btn wax-seal-btn" id="envelope-stamp-btn" aria-expanded="false" title="Nhấn vào con dấu sáp chữ N để mở / đóng bức thư">
+                <svg class="wax-seal-svg" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <defs>
+                    <!-- Soft realistic drop shadow on envelope paper -->
+                    <filter id="waxDropShadow" x="-20%" y="-20%" width="145%" height="145%">
+                      <feDropShadow dx="1" dy="5" stdDeviation="5" flood-color="#2b0306" flood-opacity="0.46" />
+                      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#1a0002" flood-opacity="0.55" />
+                    </filter>
+
+                    <!-- Outer Organic Wax Body Gradient -->
+                    <radialGradient id="waxOuterGrad" cx="36%" cy="28%" r="70%">
+                      <stop offset="0%" stop-color="#9e1c24" />
+                      <stop offset="38%" stop-color="#760e15" />
+                      <stop offset="78%" stop-color="#52070c" />
+                      <stop offset="100%" stop-color="#380306" />
+                    </radialGradient>
+
+                    <!-- Glossy Raised Rim Gradient -->
+                    <linearGradient id="waxRimGrad" x1="18%" y1="10%" x2="82%" y2="90%">
+                      <stop offset="0%" stop-color="#b82933" />
+                      <stop offset="28%" stop-color="#841219" />
+                      <stop offset="70%" stop-color="#4e060b" />
+                      <stop offset="100%" stop-color="#2e0205" />
+                    </linearGradient>
+
+                    <!-- Recessed Inner Basin Gradient (Darker Top-Left for Depth) -->
+                    <radialGradient id="waxWellGrad" cx="62%" cy="66%" r="65%">
+                      <stop offset="0%" stop-color="#750f16" />
+                      <stop offset="55%" stop-color="#5b090f" />
+                      <stop offset="100%" stop-color="#3d0408" />
+                    </radialGradient>
+
+                    <!-- Embossed Stylized "N" Monogram Gradient -->
+                    <linearGradient id="waxMonogramGrad" x1="20%" y1="15%" x2="80%" y2="85%">
+                      <stop offset="0%" stop-color="#b5333d" />
+                      <stop offset="48%" stop-color="#8b1820" />
+                      <stop offset="100%" stop-color="#52080d" />
+                    </linearGradient>
+
+                    <!-- Stamp Emboss Bevel Filter for Stylized "N" -->
+                    <filter id="monogramEmboss" x="-15%" y="-15%" width="130%" height="130%">
+                      <feDropShadow dx="-0.8" dy="-1" stdDeviation="0.6" flood-color="#d45660" flood-opacity="0.55" />
+                      <feDropShadow dx="1.2" dy="1.6" stdDeviation="0.9" flood-color="#240103" flood-opacity="0.85" />
+                    </filter>
+                  </defs>
+
+                  <!-- 1. Organic Poured-Wax Outer Shape -->
+                  <path filter="url(#waxDropShadow)" fill="url(#waxOuterGrad)"
+                    d="M 110,12
+                       C 138,10 166,20 184,41
+                       C 203,63 210,88 207,116
+                       C 204,144 195,171 173,189
+                       C 151,206 124,210 96,207
+                       C 67,204 39,193 23,169
+                       C 8,145 10,114 14,86
+                       C 18,57 33,31 59,19
+                       C 76,11 93,13 110,12 Z" />
+
+                  <!-- Subtle Outer Wax Overflow Lip Highlight -->
+                  <path fill="none" stroke="rgba(255, 175, 180, 0.24)" stroke-width="1.6" stroke-linecap="round"
+                    d="M 42,46 C 62,22 95,14 128,17 C 156,20 180,36 193,60" />
+
+                  <!-- 2. Raised Circular Cushion Rim -->
+                  <path fill="url(#waxRimGrad)" stroke="#330205" stroke-width="1.2"
+                    d="M 110,24
+                       C 158,23 196,61 196,110
+                       C 196,158 157,196 110,196
+                       C 62,196 24,157 25,110
+                       C 26,62 63,25 110,24 Z" />
+
+                  <!-- Glossy 3D Specular Highlight Arc on Top Rim (Like Reference Image) -->
+                  <path fill="none" stroke="rgba(255, 195, 198, 0.42)" stroke-width="4.2" stroke-linecap="round"
+                    d="M 44,78 C 56,46 86,29 122,30 C 148,31 169,44 181,64" />
+                  <path fill="none" stroke="rgba(255, 230, 232, 0.25)" stroke-width="1.8" stroke-linecap="round"
+                    d="M 54,66 C 68,42 94,30 124,31" />
+
+                  <!-- Bottom Rim Deep Specular Reflection -->
+                  <path fill="none" stroke="rgba(195, 55, 65, 0.28)" stroke-width="2.5" stroke-linecap="round"
+                    d="M 58,176 C 85,193 128,195 158,177" />
+
+                  <!-- 3. Recessed Inner Stamped Well -->
+                  <circle cx="110" cy="110" r="69" fill="url(#waxWellGrad)" stroke="#2b0204" stroke-width="2" />
+                  <!-- Inner Groove Highlight -->
+                  <circle cx="110" cy="110" r="67.5" fill="none" stroke="rgba(220, 85, 95, 0.22)" stroke-width="1" />
+
+                  <!-- 4. Stylized Calligraphic & Editorial Monogram "N" -->
+                  <g filter="url(#monogramEmboss)">
+                    <!-- Decorative Flourish Swash Left & Right -->
+                    <path fill="none" stroke="url(#waxMonogramGrad)" stroke-width="2.2" stroke-linecap="round"
+                      d="M 52,136 C 43,128 45,110 56,105 C 64,101 70,108 65,114" />
+                    <path fill="none" stroke="url(#waxMonogramGrad)" stroke-width="2.2" stroke-linecap="round"
+                      d="M 168,84 C 177,92 175,110 164,115 C 156,119 150,112 155,106" />
+
+                    <!-- Stylized High-Contrast Serif + Script Monogram "N" -->
+                    <!-- Left Stem with Graceful Curved Foot & Top Serif -->
+                    <path fill="url(#waxMonogramGrad)"
+                      d="M 66,72
+                         L 88,72
+                         L 88,75.5
+                         C 82,75.8 80,78 80,84
+                         L 80,134
+                         C 80,145 73,153 62,153
+                         C 54,153 49,148 49,142
+                         C 49,138 52,135 56,135
+                         C 60,135 62,138 61,141
+                         C 60,144 63,146 66,145
+                         C 71,144 73,139 73,132
+                         L 73,84
+                         C 73,78 71,75.8 66,75.5 Z" />
+
+                    <!-- Right Stem with Graceful Curved Cap & Bottom Point -->
+                    <path fill="url(#waxMonogramGrad)"
+                      d="M 134,148
+                         L 134,88
+                         C 134,76 141,68 153,68
+                         C 161,68 166,73 166,79
+                         C 166,83 163,86 159,86
+                         C 155,86 153,83 154,80
+                         C 155,77 152,75 149,76
+                         C 144,77 141,82 141,90
+                         L 141,148 Z" />
+
+                    <!-- Thick Sculpted Diagonal Stroke of "N" -->
+                    <path fill="url(#waxMonogramGrad)"
+                      d="M 76,72
+                         L 89,72
+                         L 141,134
+                         L 141,148
+                         L 131,148
+                         L 76,83 Z" />
+
+                    <!-- Interlocking Calligraphic Ribbon Loop Across the "N" -->
+                    <path fill="none" stroke="url(#waxMonogramGrad)" stroke-width="2.4" stroke-linecap="round"
+                      d="M 60,122 C 82,96 138,124 160,98" />
+
+                    <!-- Tiny Top & Bottom Star/Diamond Accents -->
+                    <path fill="url(#waxMonogramGrad)" d="M 110,50 L 112.5,55.5 L 118,58 L 112.5,60.5 L 110,66 L 107.5,60.5 L 102,58 L 107.5,55.5 Z" />
+                    <circle cx="110" cy="162" r="2.4" fill="url(#waxMonogramGrad)" />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="contact-headline-bottom">
+            <span class="wrap-word-bottom" data-i18n="contact.closingBottom">a wrap.</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==================== BOTTOM LOOKBOOK PAGER ==================== -->
+  <nav class="lookbook-pager" id="h-pager" aria-label="Slide controls">
+    <button type="button" class="pager-arrow" id="h-prev" aria-label="Previous slide">
+      <i class="ri-arrow-left-s-line"></i>
+    </button>
+    <span class="pager-counter" id="h-count" aria-live="polite">01 / 07</span>
+    <div class="pager-dots" id="h-dots"></div>
+    <button type="button" class="pager-arrow" id="h-next" aria-label="Next slide">
+      <i class="ri-arrow-right-s-line"></i>
+    </button>
+  </nav>
+
+  <!-- ==================== LIGHTBOX IMAGE PREVIEW MODAL ==================== -->
+  <div class="lightbox-backdrop" id="lightbox-modal" aria-hidden="true">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close preview">
+      <i class="ri-close-line"></i>
+    </button>
+    <img src="" alt="Full preview" class="lightbox-img" id="lightbox-img">
+  </div>
+
+  <!-- ==================== IMAGE CROPPER & VIEWPORT ADJUSTER MODAL ==================== -->
+  <div class="cropper-modal-backdrop" id="image-cropper-modal" aria-hidden="true">
+    <div class="cropper-modal-container">
+      <div class="cropper-modal-header">
+        <div class="cropper-header-title-wrap">
+          <div class="cropper-header-badge"><i class="ri-crop-2-line"></i> STUDIO CĂN CHỈNH ẢNH</div>
+          <h3 class="cropper-modal-title" id="cropper-title">Điều Chỉnh Vùng Hiển Thị Của Ảnh</h3>
+          <p class="cropper-modal-subtitle">Kéo khung hoặc rê ảnh để chọn bố cục ưng ý, tải ảnh mới từ máy tính và lưu vĩnh viễn.</p>
+        </div>
+        <div class="cropper-header-actions">
+          <button type="button" class="cropper-tool-btn" id="cropper-change-file-btn">
+            <i class="ri-folder-upload-line"></i> <span>Tải ảnh mới từ máy</span>
+          </button>
+          <button type="button" class="cropper-modal-close" id="cropper-close-btn" title="Đóng">
+            <i class="ri-close-line"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="cropper-modal-body">
+        <div class="cropper-stage-area">
+          <div class="cropper-img-wrapper">
+            <img id="cropper-active-image" src="" alt="Cropper stage">
+          </div>
+          <div class="cropper-stage-hint">
+            <i class="ri-drag-move-2-line"></i> Rê chuột để di chuyển • Lăn chuột để thu phóng
+          </div>
+        </div>
+
+        <div class="cropper-controls-sidebar">
+          <div class="cropper-control-group">
+            <label class="cropper-group-label"><i class="ri-eye-line"></i> XEM TRƯỚC TRÊN KHUNG</label>
+            <div class="cropper-preview-container">
+              <div class="cropper-preview-box" id="cropper-preview-box">
+                <div class="cropper-live-preview" id="cropper-live-preview"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cropper-control-group">
+            <label class="cropper-group-label"><i class="ri-aspect-ratio-line"></i> TỈ LỆ KHUNG HÌNH</label>
+            <div class="cropper-ratio-btn-group">
+              <button type="button" class="cropper-ratio-btn" data-ratio="NaN">Tự do</button>
+              <button type="button" class="cropper-ratio-btn" data-ratio="1">1:1</button>
+              <button type="button" class="cropper-ratio-btn" data-ratio="0.67">2:3 Dọc</button>
+              <button type="button" class="cropper-ratio-btn" data-ratio="1.5">3:2 Ngang</button>
+            </div>
+          </div>
+
+          <div class="cropper-control-group">
+            <div class="cropper-label-with-val">
+              <label class="cropper-group-label"><i class="ri-zoom-in-line"></i> THU PHÓNG</label>
+              <span class="cropper-val-badge" id="cropper-zoom-val">100%</span>
+            </div>
+            <div class="cropper-slider-row">
+              <button type="button" class="cropper-tool-btn cropper-btn-sm" id="cropper-zoom-out-btn"><i class="ri-subtract-line"></i></button>
+              <input type="range" class="cropper-range-slider" id="cropper-zoom-slider" min="0.2" max="3" step="0.05" value="1">
+              <button type="button" class="cropper-tool-btn cropper-btn-sm" id="cropper-zoom-in-btn"><i class="ri-add-line"></i></button>
+            </div>
+          </div>
+
+          <div class="cropper-control-group">
+            <label class="cropper-group-label"><i class="ri-tools-line"></i> CÔNG CỤ NHANH</label>
+            <div class="cropper-quick-tools-grid">
+              <button type="button" class="cropper-tool-btn" id="cropper-rot-left-btn"><i class="ri-anticlockwise-2-line"></i> <span>-90°</span></button>
+              <button type="button" class="cropper-tool-btn" id="cropper-rot-right-btn"><i class="ri-clockwise-2-line"></i> <span>+90°</span></button>
+              <button type="button" class="cropper-tool-btn" id="cropper-flip-x-btn"><i class="ri-swap-line"></i> <span>Lật ngang</span></button>
+              <button type="button" class="cropper-tool-btn" id="cropper-reset-btn"><i class="ri-restart-line"></i> <span>Đặt lại</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cropper-modal-footer">
+        <button type="button" class="cropper-action-btn cropper-btn-cancel" id="cropper-cancel-btn">
+          <i class="ri-close-circle-line"></i> <span>Hủy bỏ</span>
+        </button>
+        <button type="button" class="cropper-action-btn cropper-btn-apply" id="cropper-apply-btn">
+          <i class="ri-check-line"></i> <span>ÁP DỤNG &amp; CẬP NHẬT ẢNH</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/vendor/cropper.min.js"></script>
+  <script src="js/data.js?v=v17"></script>
+  <script src="js/app.js?v=v17"></script>
+  <script src="js/editor.js?v=v17"></script>
+</body>
+
+</html>
