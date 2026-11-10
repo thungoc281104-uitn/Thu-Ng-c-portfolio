@@ -10,10 +10,10 @@
   'use strict';
 
   const API_BASES = ['http://localhost:3457', ''];
-  const STORAGE_KEY = 'eno_portfolio_saved_data_v17';
+  const STORAGE_KEY = 'eno_portfolio_saved_data_v18';
   const IDB_NAME = 'EnoPortfolioDB';
   const IDB_STORE = 'state';
-  const IDB_RECORD_KEY = 'portfolioData_v17';
+  const IDB_RECORD_KEY = 'portfolioData_v18';
 
   let isEditMode = false;
   let unsavedCount = 0;
@@ -246,12 +246,28 @@
     fileInput.style.display = 'none';
     document.body.appendChild(fileInput);
 
+    const isLocalEnv = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:';
+    const urlParams = new URLSearchParams(location.search);
+    const hasEditAccess = isLocalEnv || urlParams.has('edit') || urlParams.has('admin');
+
     const topEditBtn = document.getElementById('top-edit-btn');
     if (topEditBtn) {
+      if (!hasEditAccess) {
+        topEditBtn.style.display = 'none';
+      }
       topEditBtn.addEventListener('click', () => {
         setEditMode(!isEditMode);
       });
     }
+
+    // Secret shortcut for Thu Ngoc: Press Ctrl + Shift + E to show/hide edit button anywhere
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'e') {
+        if (topEditBtn) {
+          topEditBtn.style.display = topEditBtn.style.display === 'none' ? 'inline-flex' : 'none';
+        }
+      }
+    });
 
     document.getElementById('editor-save-btn').addEventListener('click', () => saveAllChanges(false));
     document.getElementById('editor-reset-btn').addEventListener('click', resetToDefault);
