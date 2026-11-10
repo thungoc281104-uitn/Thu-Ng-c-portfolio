@@ -411,6 +411,7 @@ body.h-mode .lookbook-track {
   overflow: clip;
 }
 
+/* ==================== PARALLAX SLIDE TRANSITION SYSTEM ==================== */
 body.h-mode .slide-panel {
   position: absolute;
   inset: 0;
@@ -418,11 +419,12 @@ body.h-mode .slide-panel {
   height: 100%;
   opacity: 0;
   pointer-events: none;
-  transform: translate3d(calc(var(--offset, 0) * 14%), 0, 0) scale(0.96);
+  transform: translate3d(calc(var(--offset, 0) * 18%), 0, 0) scale(0.95);
   transition:
-    transform 0.65s var(--ease-out),
-    opacity 0.5s var(--ease-out);
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
+  perspective: 1200px;
 }
 
 body.h-mode .slide-panel.is-active {
@@ -430,6 +432,68 @@ body.h-mode .slide-panel.is-active {
   pointer-events: auto;
   transform: translate3d(0, 0, 0) scale(1);
   z-index: 5;
+}
+
+/* Parallax Layer 1: Background & Paper Canvas (Counter-glide depth) */
+body.h-mode .slide-panel .slide-canvas {
+  transform: translate3d(calc(var(--offset, 0) * -6%), 0, 0);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+body.h-mode .slide-panel.is-active .slide-canvas {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Parallax Layer 2: Main Titles, Headers & Typography (Medium Speed) */
+body.h-mode .slide-panel .story-section-header,
+body.h-mode .slide-panel .story-left-col .story-tag-row,
+body.h-mode .slide-panel .cover-title-wrap,
+body.h-mode .slide-panel .works-header,
+body.h-mode .slide-panel .skills-left-col,
+body.h-mode .slide-panel .contact-card {
+  transform: translate3d(calc(var(--offset, 0) * 14%), 0, 0);
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+  will-change: transform;
+}
+body.h-mode .slide-panel.is-active .story-section-header,
+body.h-mode .slide-panel.is-active .story-left-col .story-tag-row,
+body.h-mode .slide-panel.is-active .cover-title-wrap,
+body.h-mode .slide-panel.is-active .works-header,
+body.h-mode .slide-panel.is-active .skills-left-col,
+body.h-mode .slide-panel.is-active .contact-card {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Parallax Layer 3: Foreground Cards, Cutouts & Visual Bento (Deep Parallax + Pop) */
+body.h-mode .slide-panel .story-portrait-card,
+body.h-mode .slide-panel .pillar-card,
+body.h-mode .slide-panel .cover-portrait-wrap,
+body.h-mode .slide-panel .fais-top-split,
+body.h-mode .slide-panel .fais-bottom-split,
+body.h-mode .slide-panel .mood-canvas,
+body.h-mode .slide-panel .skill-card-group {
+  transform: translate3d(calc(var(--offset, 0) * 26%), 0, 0) scale(0.97);
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s ease;
+  will-change: transform;
+}
+body.h-mode .slide-panel.is-active .story-portrait-card,
+body.h-mode .slide-panel.is-active .pillar-card,
+body.h-mode .slide-panel.is-active .cover-portrait-wrap,
+body.h-mode .slide-panel.is-active .fais-top-split,
+body.h-mode .slide-panel.is-active .fais-bottom-split,
+body.h-mode .slide-panel.is-active .mood-canvas,
+body.h-mode .slide-panel.is-active .skill-card-group {
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* Floating Interactive Parallax for Active Slide elements */
+body.h-mode .slide-panel.is-active .story-portrait-card,
+body.h-mode .slide-panel.is-active .cover-portrait-wrap,
+body.h-mode .slide-panel.is-active .fais-bento-top,
+body.h-mode .slide-panel.is-active .mood-right-col {
+  transform: translate3d(var(--mouse-px, 0px), var(--mouse-py, 0px), 0) rotateX(var(--mouse-rot-x, 0deg)) rotateY(var(--mouse-rot-y, 0deg));
+  transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
 }
 
 /* ==================== POSTER BOARD OVERVIEW MODE (1 + 2x3 GRID) ==================== */
@@ -2923,10 +2987,112 @@ body.editor-mode-active *:hover > .editor-img-overlay {
   background: #f6f3ec;
 }
 
+/* ==================== PROJECT TABS PARALLAX ENTRANCE ==================== */
 .fais-project-accordion.is-open .fais-accordion-body {
   display: flex;
   flex-direction: column;
   gap: 1.15rem;
+  animation: parallaxBodyFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes parallaxBodyFade {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* Parallax Layer Left: Case study metadata & objectives slide from left */
+.fais-project-accordion.is-open .fais-case-left {
+  animation: parallaxCaseLeft 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes parallaxCaseLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-24px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Parallax Layer Right: 10-Image Bento Grid slides from right with depth */
+.fais-project-accordion.is-open .fais-bento-top {
+  animation: parallaxBentoRight 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.04s both;
+}
+
+@keyframes parallaxBentoRight {
+  from {
+    opacity: 0;
+    transform: translate3d(32px, 0, 0) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* Parallax Layer Inner: Bento images reveal with smooth scale */
+.fais-project-accordion.is-open .fais-bento-card img {
+  animation: parallaxImgReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+
+@keyframes parallaxImgReveal {
+  from {
+    transform: scale(1.06);
+    filter: brightness(0.94);
+  }
+  to {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+/* Parallax Layer Bottom: Board 2 glides up smoothly */
+.fais-project-accordion.is-open .fais-bottom-split {
+  animation: parallaxBottomUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+
+@keyframes parallaxBottomUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 25px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Parallax KPI card stagger */
+.fais-project-accordion.is-open .fais-kpi-card:nth-child(1) {
+  animation: parallaxKpiPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+.fais-project-accordion.is-open .fais-kpi-card:nth-child(2) {
+  animation: parallaxKpiPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.17s both;
+}
+.fais-project-accordion.is-open .fais-kpi-card:nth-child(3) {
+  animation: parallaxKpiPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+}
+.fais-project-accordion.is-open .fais-kpi-card:nth-child(4) {
+  animation: parallaxKpiPop 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.27s both;
+}
+
+@keyframes parallaxKpiPop {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
 }
 
 /* ==================== BOARD 1: FAIS OVERVIEW + 10-IMAGE BENTO ==================== */

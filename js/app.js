@@ -702,6 +702,41 @@
   window.portfolioSyncBars = syncImpactBars;
   window.portfolioOpenProject = openProject;
 
+  // --- 5. SUBTLE 3D MOUSE PARALLAX EFFECT FOR ACTIVE SLIDE ---
+  (function initMouseParallax() {
+    const track = document.getElementById('h-track');
+    if (!track) return;
+    let rafId = null;
+
+    track.addEventListener('mousemove', (e) => {
+      if (window.innerWidth < 900) return;
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const rect = track.getBoundingClientRect();
+        const normX = ((e.clientX - rect.left) / rect.width) - 0.5; // -0.5 to 0.5
+        const normY = ((e.clientY - rect.top) / rect.height) - 0.5; // -0.5 to 0.5
+
+        const activePanel = document.querySelector('.slide-panel.is-active');
+        if (activePanel) {
+          activePanel.style.setProperty('--mouse-px', (normX * 14).toFixed(2) + 'px');
+          activePanel.style.setProperty('--mouse-py', (normY * 10).toFixed(2) + 'px');
+          activePanel.style.setProperty('--mouse-rot-y', (normX * 2.8).toFixed(2) + 'deg');
+          activePanel.style.setProperty('--mouse-rot-x', (-normY * 2.2).toFixed(2) + 'deg');
+        }
+      });
+    }, { passive: true });
+
+    track.addEventListener('mouseleave', () => {
+      const activePanel = document.querySelector('.slide-panel.is-active');
+      if (activePanel) {
+        activePanel.style.setProperty('--mouse-px', '0px');
+        activePanel.style.setProperty('--mouse-py', '0px');
+        activePanel.style.setProperty('--mouse-rot-y', '0deg');
+        activePanel.style.setProperty('--mouse-rot-x', '0deg');
+      }
+    });
+  })();
+
   // Initialize
   applyLayoutMode(currentMode);
   const startIdx = panels.findIndex(p => `#${p.id}` === location.hash);
