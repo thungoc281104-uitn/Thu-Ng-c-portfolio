@@ -486,6 +486,218 @@ body.h-mode .slide-panel.is-active .skill-card-group {
   transform: translate3d(0, 0, 0) scale(1);
 }
 
+/* ==================== STAGGERED BLOCK FLY-IN ANIMATIONS ==================== */
+@keyframes flyInFromRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(55px, 0, 0) scale(0.95);
+  }
+  75% {
+    opacity: 1;
+    transform: translate3d(-3px, 0, 0) scale(1.005);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes flyInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-55px, 0, 0) scale(0.95);
+  }
+  75% {
+    opacity: 1;
+    transform: translate3d(3px, 0, 0) scale(1.005);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes flyInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 45px, 0) scale(0.95);
+  }
+  75% {
+    opacity: 1;
+    transform: translate3d(0, -3px, 0) scale(1.005);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes flyInFromTop {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -35px, 0) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes flyInPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.86) translate3d(0, 20px, 0);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.02) translate3d(0, -2px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+/* --- Slide 01 (#cover): Staggered Blocks Fly-in --- */
+body.h-mode .slide-cover.is-active .cover-hand-top-left {
+  animation: flyInFromLeft 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+body.h-mode .slide-cover.is-active .cover-hand-top-right {
+  animation: flyInFromRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+body.h-mode .slide-cover.is-active .cover-title-left {
+  animation: flyInFromLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both;
+}
+body.h-mode .slide-cover.is-active .cover-title-right {
+  animation: flyInFromRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both;
+}
+body.h-mode .slide-cover.is-active .cover-portrait-wrap {
+  animation: flyInFromBottom 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.22s both;
+}
+body.h-mode .slide-cover.is-active .cover-role-left {
+  animation: flyInFromLeft 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
+}
+body.h-mode .slide-cover.is-active .cover-author-right {
+  animation: flyInFromRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
+}
+
+/* --- Slide 02 (#story): Staggered Blocks Fly-in --- */
+body.h-mode .slide-story.is-active .story-tag-row {
+  animation: flyInFromLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both;
+}
+body.h-mode .slide-story.is-active .story-portrait-card {
+  animation: flyInFromBottom 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+body.h-mode .slide-story.is-active .story-section-header {
+  animation: flyInFromTop 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+body.h-mode .slide-story.is-active .pillar-card:nth-child(1) {
+  animation: flyInFromRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+body.h-mode .slide-story.is-active .pillar-card:nth-child(2) {
+  animation: flyInFromRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+}
+body.h-mode .slide-story.is-active .pillar-card:nth-child(3) {
+  animation: flyInFromRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.41s both;
+}
+body.h-mode .slide-story.is-active .story-bottom-action {
+  animation: flyInFromBottom 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.52s both;
+}
+
+/* --- Slide 03 (#projects): Staggered Bento Tiles Fly-in on Tab Switch --- */
+.fais-project-accordion.is-open .fais-bento-card:nth-child(1) {
+  animation: flyInFromRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+.fais-project-accordion.is-open .fais-bento-card:nth-child(2) {
+  animation: flyInFromRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both;
+}
+.fais-project-accordion.is-open .fais-bento-card:nth-child(3) {
+  animation: flyInFromRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.20s both;
+}
+.fais-project-accordion.is-open .fais-bento-card:nth-child(4) {
+  animation: flyInFromRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.26s both;
+}
+.fais-project-accordion.is-open .fais-bento-card:nth-child(5) {
+  animation: flyInFromRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
+}
+.fais-project-accordion.is-open .fais-bento-card:nth-child(6) {
+  animation: flyInFromRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.38s both;
+}
+.fais-project-accordion.is-open .fais-bento-card:nth-child(n+7) {
+  animation: flyInFromRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.44s both;
+}
+
+/* --- Slide 04 (#social) & Slide 05 (#impact) --- */
+body.h-mode .slide-social.is-active .social-photo-col {
+  animation: flyInFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+body.h-mode .slide-social.is-active .social-right-col {
+  animation: flyInFromRight 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+body.h-mode .slide-impact.is-active .impact-header {
+  animation: flyInFromTop 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+body.h-mode .slide-impact.is-active .impact-card:nth-child(1) {
+  animation: flyInFromBottom 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
+}
+body.h-mode .slide-impact.is-active .impact-card:nth-child(2) {
+  animation: flyInFromBottom 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.26s both;
+}
+body.h-mode .slide-impact.is-active .impact-card:nth-child(3) {
+  animation: flyInFromBottom 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
+}
+
+/* --- Slide 06 (#mood): Staggered Moodboard Photos --- */
+body.h-mode .slide-mood.is-active .mood-left-col {
+  animation: flyInFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+}
+body.h-mode .slide-mood.is-active .mood-img-box:nth-child(1) {
+  animation: flyInPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+body.h-mode .slide-mood.is-active .mood-img-box:nth-child(2) {
+  animation: flyInPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.20s both;
+}
+body.h-mode .slide-mood.is-active .mood-img-box:nth-child(3) {
+  animation: flyInPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+}
+body.h-mode .slide-mood.is-active .mood-img-box:nth-child(4) {
+  animation: flyInPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
+}
+body.h-mode .slide-mood.is-active .mood-img-box:nth-child(5) {
+  animation: flyInPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.44s both;
+}
+body.h-mode .slide-mood.is-active .mood-img-box:nth-child(6) {
+  animation: flyInPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.52s both;
+}
+
+/* --- Slide 07 (#works): Skills Bento Cards Fly-in --- */
+body.h-mode .slide-works.is-active .works-header {
+  animation: flyInFromTop 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
+}
+body.h-mode .slide-works.is-active .works-card:nth-child(1) {
+  animation: flyInFromLeft 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+body.h-mode .slide-works.is-active .works-card:nth-child(2) {
+  animation: flyInFromRight 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+body.h-mode .slide-works.is-active .works-card:nth-child(3) {
+  animation: flyInFromBottom 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+/* Ensure hover states override final animation transforms */
+.pillar-card:hover {
+  transform: translateX(4px) translateY(-2px) !important;
+}
+.story-portrait-card:hover {
+  transform: translateY(-2px) !important;
+}
+.story-action-link:hover {
+  transform: translateX(4px) !important;
+}
+.fais-bento-card:hover {
+  transform: translateY(-2px) !important;
+}
+
 /* Floating Interactive Parallax for Active Slide elements */
 body.h-mode .slide-panel.is-active .story-portrait-card,
 body.h-mode .slide-panel.is-active .cover-portrait-wrap,
