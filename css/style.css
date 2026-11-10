@@ -348,7 +348,7 @@ ul {
 }
 
 .top-edit-btn {
-  display: inline-flex;
+  display: none;
   align-items: center;
   gap: 0.38rem;
   padding: 0.38rem 0.85rem;

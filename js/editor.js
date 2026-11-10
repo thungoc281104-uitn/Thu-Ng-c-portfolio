@@ -10,10 +10,10 @@
   'use strict';
 
   const API_BASES = ['http://localhost:3457', ''];
-  const STORAGE_KEY = 'eno_portfolio_saved_data_v18';
+  const STORAGE_KEY = 'eno_portfolio_saved_data_v19';
   const IDB_NAME = 'EnoPortfolioDB';
   const IDB_STORE = 'state';
-  const IDB_RECORD_KEY = 'portfolioData_v18';
+  const IDB_RECORD_KEY = 'portfolioData_v19';
 
   let isEditMode = false;
   let unsavedCount = 0;
@@ -252,8 +252,10 @@
 
     const topEditBtn = document.getElementById('top-edit-btn');
     if (topEditBtn) {
-      if (!hasEditAccess) {
-        topEditBtn.style.display = 'none';
+      if (hasEditAccess) {
+        topEditBtn.style.setProperty('display', 'inline-flex', 'important');
+      } else {
+        topEditBtn.style.setProperty('display', 'none', 'important');
       }
       topEditBtn.addEventListener('click', () => {
         setEditMode(!isEditMode);
@@ -264,7 +266,8 @@
     document.addEventListener('keydown', (e) => {
       if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'e') {
         if (topEditBtn) {
-          topEditBtn.style.display = topEditBtn.style.display === 'none' ? 'inline-flex' : 'none';
+          const isHidden = window.getComputedStyle(topEditBtn).display === 'none';
+          topEditBtn.style.setProperty('display', isHidden ? 'inline-flex' : 'none', 'important');
         }
       }
     });
