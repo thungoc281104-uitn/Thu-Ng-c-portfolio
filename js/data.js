@@ -325,9 +325,9 @@ const PORTFOLIO_DATA = {
     },
     "impact": {
       "subHeading": "không chỉ đơn thuần là cắt ghép,",
-      "mainHeading": "mà là đồng điệu cùng hình ảnh.",
-      "metricLabel": "Tổng lượt xem / hiển thị bài đăng",
-      "metricNumber": "70,368",
+      "mainHeading": "đồng điệu cùng hình ảnh & số liệu.",
+      "metricLabel": "Tổng lượt xem / hiển thị đa nền tảng",
+      "metricNumber": "70,368+",
       "bar1Val": "6",
       "bar1Lbl": "13-17",
       "bar2Val": "61",
@@ -338,11 +338,11 @@ const PORTFOLIO_DATA = {
       "bar4Lbl": "35-44",
       "bar5Val": "3",
       "bar5Lbl": "45+",
-      "chartNote": "Nội dung Content Creative chạm mạnh nhất tới thế hệ Gen Z, với 61% khán giả thuộc độ tuổi 18–24.",
-      "philosophyText": "Làm sao để nhịp cắt khớp vào giai điệu mượt như một bài vũ đạo? Làm sao viết câu caption vừa đọc đã thấy lấp lánh? Làm sao bắt được khoảnh khắc vừa thẩm mỹ vừa kể được câu chuyện? Và chọn bản nhạc nào để video chạm cảm xúc mạnh nhất?",
-      "clipTop": "assets/images/visual-street-clip.jpg",
-      "clipBottom": "assets/images/visual-dark-clip.jpg",
-      "sticker": "Minimal"
+      "chartNote": "Khán giả trọng tâm: 61% thuộc Gen Z (18–24 tuổi) & 22% nhóm 25–34 tuổi — 83% tệp khách hàng có tính lan truyền và sức mua cao nhất.",
+      "philosophyText": "✦ 01. Sound-driven Editing: Nhịp cắt khớp từng beat âm nhạc, chuyển cảnh mượt mà tạo nhịp điệu cuốn hút không khoảng lặng.\n✦ 02. Stop-the-scroll Hook: Bắt trọn 3s đầu bằng góc máy đắt giá và màu sắc tương phản sắc nét, giữ chân người xem.\n✦ 03. Thẩm mỹ Minimal & Chân thực: Tôn vinh vẻ đẹp sản phẩm với bố cục sạch và ánh sáng tự nhiên, định hình gu thẩm mỹ cao cấp.",
+      "clipTop": "assets/images/projects_p1_img5_1794023312152.jpg",
+      "clipBottom": "assets/images/social-portrait.jpg",
+      "sticker": "Visual & Metrics"
     },
     "mood": {
       "tagLivestream": "Livestream",
@@ -747,10 +747,10 @@ const PORTFOLIO_DATA = {
       "bottomCaption": "such as..."
     },
     "impact": {
-      "subHeading": "it's not just editing,",
-      "mainHeading": "it's vibing with visuals.",
-      "metricLabel": "Total post views / impressions",
-      "metricNumber": "70,368",
+      "subHeading": "not just simple video editing,",
+      "mainHeading": "vibing with visuals & metrics.",
+      "metricLabel": "Total multi-platform impressions",
+      "metricNumber": "70,368+",
       "bar1Val": "6",
       "bar1Lbl": "13-17",
       "bar2Val": "61",
@@ -761,11 +761,11 @@ const PORTFOLIO_DATA = {
       "bar4Lbl": "35-44",
       "bar5Val": "3",
       "bar5Lbl": "45+",
-      "chartNote": "My content primarily resonates with Gen Z, with 61% of my audience aged 18–24.",
-      "philosophyText": "How to set the tempo so clips fall into rhythm like choreography? How to write a caption that sparkles? How to capture moments that look aesthetic but feel like a story? How to find the perfect track that makes your edit hit harder?",
-      "clipTop": "assets/images/visual-street-clip.jpg",
-      "clipBottom": "assets/images/visual-dark-clip.jpg",
-      "sticker": "Minimal"
+      "chartNote": "Core Audience: 61% Gen Z (18–24) & 22% Early Millennials (25–34) — 83% golden demographic with top viral reach & engagement.",
+      "philosophyText": "✦ 01. Sound-driven Editing: Precision beat-sync cuts that create a seamless, rhythmic cadence without dead air.\n✦ 02. Stop-the-scroll Hook: Winning the first 3 seconds with high-contrast frames and intentional composition.\n✦ 03. Minimal & Authentic Aesthetic: Celebrating genuine product aesthetics with clean composition and cinematic lighting.",
+      "clipTop": "assets/images/projects_p1_img5_1794023312152.jpg",
+      "clipBottom": "assets/images/social-portrait.jpg",
+      "sticker": "Visual & Metrics"
     },
     "mood": {
       "tagLivestream": "Livestream",
